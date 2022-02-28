@@ -1,14 +1,14 @@
-import { Request, Response } from "express";
-import { ListMessageService } from "../services/ListMessagesService";
+import { Request, Response } from 'express';
+import { ListMessageService } from '../services/ListMessagesService';
 
 class ListMessageController {
-    async hanle(request: Request, response: Response){
-        const listMessageService = new ListMessageService();
+  async hanle(request: Request, response: Response) {
+    const listMessageService = new ListMessageService();
+    console.log('test');
+    const allMessages = await listMessageService.execute();
 
-        const allMessages = await listMessageService.execute();
-
-        return response.json(allMessages)
-    }
+    return response.json(allMessages);
+  }
 }
 
-export { ListMessageController }
+export { ListMessageController };
